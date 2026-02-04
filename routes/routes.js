@@ -3,6 +3,7 @@ const router = express.Router()
 
 const authController = require("../controller/authController")
 const postController = require("../controller/postController")
+const authMiddleware = require("../middlewares/authMiddleware")
 
 //Usuario
 router.post("/usuarios", authController.criarUsuario)
