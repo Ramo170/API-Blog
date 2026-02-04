@@ -10,7 +10,7 @@ router.post("/usuarios", authController.criarUsuario)
 router.post("/login", authController.login)
 
 //Posts
-router.post("/posts", postController.criarPost)
+router.post("/posts", authMiddleware ,postController.criarPost)
 router.get("/posts", postController.listarPosts)
 
 module.exports = router
