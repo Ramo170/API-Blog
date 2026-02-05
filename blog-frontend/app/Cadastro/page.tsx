@@ -9,7 +9,7 @@ export default function Cadastro() {
   const [senha, setSenha] = useState("")
   const router = useRouter()
 
-  const cadastrar = async (e:any) => {
+  const cadastrar = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const res = await fetch("http://localhost:3001/usuarios", {
@@ -34,6 +34,7 @@ export default function Cadastro() {
         <input 
         type="email" 
         placeholder="Digite o seu email..."
+        className="border p-2"
         value={email}
         onChange={(e)=>{setEmail(e.target.value)}}
         />
@@ -41,6 +42,7 @@ export default function Cadastro() {
         <input 
         type="password" 
         placeholder="Digite o sua senha..."
+        className="border p-2"
         value={senha}
         onChange={(e)=>{setSenha(e.target.value)}}
         />
